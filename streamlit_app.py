@@ -39,7 +39,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 st.dataframe(fruityvice_normalized)
 
 #don't run anyuthing past here while we trouobleshoot
-
+st.stop()
 
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
