@@ -3,7 +3,8 @@
 #import requests
 import snowflake.connector
 from urllib.error import URLError
-
+#don't run anyuthing past here while we trouobleshoot
+st.stop()
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -38,8 +39,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do? displays the normalised view
 st.dataframe(fruityvice_normalized)
 
-#don't run anyuthing past here while we trouobleshoot
-st.stop()
+
 
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
